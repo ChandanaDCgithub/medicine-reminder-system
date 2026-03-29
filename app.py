@@ -11,7 +11,10 @@ import os
 from pathlib import Path
 
 # Import models
-from medicine_models import Base, User, Medicine, MedicineSchedule, MedicineHistory, WaterLog, MissedMedicineAlert
+try:
+    from medicine_models import Base, User, Medicine, MedicineSchedule, MedicineHistory, WaterLog, MissedMedicineAlert
+except ImportError:
+    from .medicine_models import Base, User, Medicine, MedicineSchedule, MedicineHistory, WaterLog, MissedMedicineAlert
 
 # Get project root
 PROJECT_ROOT = Path(__file__).parent.parent
